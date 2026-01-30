@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer | Focus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="timer-message">Please select a timer before starting.</div>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="timer">
+                <div class="timer-header">
+                    <h1>⏰ Pomodoro Timer</h1>
+                    <button id="settings-btn" class="settings-btn">⚙️ Settings</button>
+                </div>
+
+                <div class="button-container">
+                    <button class="button" id="pomodoro-session">Pomodoro</button>
+                    <button class="button" id="short-break">Short Break</button>
+                    <button class="button" id="long-break">Long Break</button>
+                </div>
+
+                <main>
+                    <div class="pomodoro">
+                        <div id="pomodoro-timer" class="timer-display" data-duration="25:00">
+                            <h1 class="time">25:00</h1>
+                        </div>
+
+                        <div id="short-timer" class="timer-display" data-duration="5:00">
+                            <h1 class="time">5:00</h1>
+                        </div>
+
+                        <div id="long-timer" class="timer-display" data-duration="10:00">
+                            <h1 class="time">10:00</h1>
+                        </div>
+                    </div>
+                </main>
+
+                <div class="buttons">
+                    <button id="start">START</button>
+                    <button id="stop">STOP</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Table Section -->
+        <div class="task-section">
+            <div class="task-container">
+                <h2>📝 Tugas saya</h2>
+                
+                <div class="task-input-group">
+                    <input type="text" id="task-input" placeholder="Enter your task...">
+                    <button id="add-task-btn">Masukkan Tugas</button>
+                </div>
+
+                <table id="task-table" class="task-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="task-tbody">
+                    </tbody>
+                </table>
+
+                <div id="empty-message" class="empty-message">No tasks yet. Add one to get started!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ Pengaturan Timer</h2>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="pomodoro-minutes">Durasi Pomodoro (menit):</label>
+                    <input type="number" id="pomodoro-minutes" min="1" max="60" value="25">
+                </div>
+                
+                <div class="setting-group">
+                    <label for="short-break-minutes">Durasi Short Break (menit):</label>
+                    <input type="number" id="short-break-minutes" min="1" max="60" value="5">
+                </div>
+                
+                <div class="setting-group">
+                    <label for="long-break-minutes">Durasi Long Break (menit):</label>
+                    <input type="number" id="long-break-minutes" min="1" max="60" value="10">
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button id="reset-settings" class="btn-reset">Reset ke Default</button>
+                <button id="save-settings" class="btn-save">Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
